@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<databaseChangeLog   
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"   
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">   
+  <changeSet  author="Aninda"  id="changelog-1.0">  
+    <createTable  tableName="TOPIC">  
+      <column  name="ID"  type="int" autoIncrement="true">  
+        <constraints  nullable="false"  primaryKey="true"/>  
+      </column>  
+      <column  name="NAME"  type="Text">  
+        <constraints  nullable="false"/>  
+      </column> 
+      <column  name="DESCRIPTION"  type="varchar(75)">  
+        <constraints  nullable="true"/>  
+      </column>   
+      <column  name="CREATEDBY"  type="varchar(75)">  
+        <constraints  nullable="false"/>  
+      </column>
+      <column  name="CREATEDTIME"  type="timestamp without time zone"
+        defaultValueComputed="(now() at time zone 'utc')">  
+        <constraints  nullable="false"/>  
+      </column>
+      <column  name="UPDATEDBY"  type="varchar(75)" />
+      <column  name="UPDATEDTIME"  type="timestamp without time zone" 
+        defaultValueComputed="(now() at time zone 'utc')" /> 
+         
+    </createTable>  
+  </changeSet>  
+</databaseChangeLog> 
