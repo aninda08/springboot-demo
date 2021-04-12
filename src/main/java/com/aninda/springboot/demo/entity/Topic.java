@@ -14,9 +14,10 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
-// import lombok.Getter;
+import lombok.Getter;
+import lombok.Setter;
 
-// @Getter
+@Getter
 @Entity
 @Table(name = "TOPIC")
 public class Topic {
@@ -24,6 +25,7 @@ public class Topic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID",nullable = false)
+    @Setter
     protected int id;
 
     @Column(name="NAME",nullable = false)
@@ -56,61 +58,4 @@ public class Topic {
         this.description = description;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCreatedby() {
-        return createdby;
-    }
-
-    public void setCreatedby(String createdby) {
-        this.createdby = createdby;
-    }
-
-    public String getUpdatedby() {
-        return updatedby;
-    }
-
-    public void setUpdatedby(String updatedby) {
-        this.updatedby = updatedby;
-    }
-
-    public Date getCreatedtime() {
-        return createdtime;
-    }
-
-    public void setCreatedtime(Date createdtime) {
-        this.createdtime = createdtime;
-    }
-
-    public Date getUpdatedtime() {
-        return updatedtime;
-    }
-
-    public void setUpdatedtime(Date updatedtime) {
-        this.updatedtime = updatedtime;
-    }
-
-    
 }
